@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube_app/pages/home_page.dart';
 
 import '../ui/general/colors.dart';
 
@@ -13,9 +14,7 @@ class _InitPageState extends State<InitPage> {
   int _currentIndex = 0;
 
   List<Widget> _pages = [
-    Center(
-      child: Text("Principal"),
-    ),
+    HomePage(),
     Center(
       child: Text("Shorts"),
     ),
