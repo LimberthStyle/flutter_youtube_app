@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube_app/models/video_model.dart';
 import 'package:flutter_youtube_app/services/api_service.dart';
+import 'package:flutter_youtube_app/ui/general/colors.dart';
 import 'package:flutter_youtube_app/ui/widgets/item_filter_widget.dart';
 import 'package:flutter_youtube_app/ui/widgets/item_video_widget.dart';
-
-import '../ui/general/colors.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,10 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //const HomePage({Key? key}) : super(key: key);
   final APIService _apiService = APIService();
   List<VideoModel> videos = [];
-
-  @override
   initState() {
     super.initState();
     getData();
@@ -30,11 +28,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    _apiService.getVideos();
-
+    _apiService.getVideos;
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 14,
           vertical: 0,
         ),
@@ -48,20 +45,26 @@ class _HomePageState extends State<HomePage> {
                   ElevatedButton.icon(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        primary: kbrandSecondaryColor,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.0,
-                        )),
+                      elevation: 0,
+                      backgroundColor: kbrandSecondaryColor,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                      ),
+                    ),
                     icon: const Icon(
                       Icons.explore_outlined,
                     ),
-                    label: const Text("Explorar"),
+                    label: const Text(
+                      "Explorar",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                   const SizedBox(
-                    height: 33.0,
+                    height: 30.0,
                     child: VerticalDivider(
-                      color: Colors.white30,
+                      color: kbrandSecondaryColor,
                       thickness: 1.0,
                     ),
                   ),
@@ -74,11 +77,11 @@ class _HomePageState extends State<HomePage> {
                     isSelected: false,
                   ),
                   ItemFilterWidget(
-                    text: "Música",
+                    text: "Musica",
                     isSelected: false,
                   ),
                   ItemFilterWidget(
-                    text: "Programación",
+                    text: "Programacion",
                     isSelected: false,
                   ),
                 ],

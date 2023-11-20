@@ -25,7 +25,7 @@ class _ChannelPageState extends State<ChannelPage>
         appBar: AppBar(
           backgroundColor: kBrandPrimaryColor,
           elevation: 0,
-          title: Text("ghhhhh hhh"),
+          title: Text("CANAL"),
           actions: [
             IconButton(
               onPressed: () {},

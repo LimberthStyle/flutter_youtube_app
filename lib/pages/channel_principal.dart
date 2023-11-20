@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: [
                   Image.network(
-                    "https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     width: double.infinity,
                     height: height * 0.1,
                     fit: BoxFit.cover,
@@ -46,12 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
-                      "assets/images/perfil.png",
+                      "assets/images/style.jpg",
                     ),
                   ),
                   SizedBox(height: 8),
                   Text(
-                    "CRUSCAYA",
+                    "LimberthStyle",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 12.0,
                   ),
                   Text(
-                    "6.5 M de suscriptores. 888 videos",
+                    "5.8 M de suscriptores · 220 videos",
                     style: TextStyle(
                       color: Colors.white54,
                       fontSize: 12.0,
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "Quiero conocer el mundo y lo comparto en video",
+                        "Estoy clonando el app de youtube, quiero ser desarrollador de aplicaciones moviles",
                         style: TextStyle(
                           color: Colors.white54,
                           fontSize: 12.0,

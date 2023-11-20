@@ -23,7 +23,6 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
   List<VideoModel> videos = [];
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getData();
     _playerController = YoutubePlayerController(
@@ -63,7 +62,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
           ),
           ListTile(
             title: Text(
-              "viajes por el mundo",
+              "Jaze - Reloj Vital (Video Oficial)",
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -73,7 +72,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
               ),
             ),
             subtitle: Text(
-              "6.5M de vistas · hace 2 años",
+              "5 M de vistas · hace 3 años",
               style: TextStyle(
                 color: Colors.white54,
                 fontSize: 13.0,
@@ -148,18 +147,18 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
                   leading: CircleAvatar(
                     backgroundColor: Colors.white24,
                     backgroundImage: NetworkImage(
-                      "https://images.pexels.com/photos/3379933/pexels-photo-3379933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                      "https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     ),
                   ),
                   title: Text(
-                    "cruscaya",
+                    "LimberthStyle",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14.0,
                     ),
                   ),
                   subtitle: Text(
-                    "1.4 M de suscriptores",
+                    "5.8 M de suscriptores",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 12.0,

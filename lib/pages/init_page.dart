@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_youtube_app/pages/home_page.dart';
-
-import '../ui/general/colors.dart';
+import 'package:flutter_youtube_app/ui/general/colors.dart';
 
 class InitPage extends StatefulWidget {
   const InitPage({Key? key}) : super(key: key);
@@ -12,23 +11,21 @@ class InitPage extends StatefulWidget {
 
 class _InitPageState extends State<InitPage> {
   int _currentIndex = 0;
-
   List<Widget> _pages = [
     HomePage(),
     Center(
-      child: Text("Shorts"),
+      child: Text("Short"),
     ),
     Center(
       child: Text("Agregar"),
     ),
     Center(
-      child: Text("Suscripcion"),
+      child: Text("Suscripciones"),
     ),
     Center(
       child: Text("Biblioteca"),
-    ),
+    )
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +34,7 @@ class _InitPageState extends State<InitPage> {
         elevation: 0,
         backgroundColor: kBrandPrimaryColor,
         title: Image.asset(
-          'assets/images/logo.png',
+          "assets/images/logo.png",
           height: 26.0,
         ),
         actions: [
@@ -49,53 +46,49 @@ class _InitPageState extends State<InitPage> {
             ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Icon(
-                  Icons.notifications_none,
-                  color: Colors.white,
-                ),
-                Positioned(
-                  top: -2,
-                  right: -4,
-                  child: Container(
-                    padding: EdgeInsets.all(2.4),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.red,
-                    ),
-                    child: Text(
-                      "9+",
-                      style: TextStyle(
-                        fontSize: 11.0,
+              onPressed: () {},
+              icon: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  const Icon(
+                    Icons.notifications_none,
+                    color: Colors.white,
+                  ),
+                  Positioned(
+                    top: -2,
+                    right: -4,
+                    child: Container(
+                      padding: const EdgeInsets.all(2.4),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.red,
+                      ),
+                      child: Text(
+                        "9+",
+                        style: TextStyle(fontSize: 10.0),
                       ),
                     ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+                  )
+                ],
+              )),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.search,
               color: Colors.white,
             ),
           ),
           const SizedBox(
-            width: 12.0,
+            width: 6.0,
           ),
           const CircleAvatar(
             backgroundColor: Colors.white12,
             radius: 14.0,
-            backgroundImage: NetworkImage(
-                "https://images.pexels.com/photos/5126956/pexels-photo-5126956.jpeg"),
+            backgroundImage: AssetImage("assets/images/style.jpg"),
           ),
           const SizedBox(
             width: 12.0,
-          ),
+          )
         ],
       ),
       body: _pages[_currentIndex],
@@ -113,39 +106,34 @@ class _InitPageState extends State<InitPage> {
         },
         items: [
           const BottomNavigationBarItem(
-            label: "Principal",
-            icon: Icon(
-              Icons.home_filled,
-            ),
-          ),
+              label: "Principal",
+              icon: Icon(
+                Icons.home_filled,
+              )),
           const BottomNavigationBarItem(
-            label: "Shorts",
-            icon: Icon(
-              Icons.play_arrow_rounded,
-            ),
-          ),
+              label: "Shorts",
+              icon: Icon(
+                Icons.play_circle_filled,
+              )),
           BottomNavigationBarItem(
-            label: "",
-            icon: Container(
-              margin: const EdgeInsets.only(top: 4.0),
-              child: const Icon(
-                Icons.add_circle_outline,
-                size: 30.0,
-              ),
-            ),
-          ),
+              label: "",
+              icon: Container(
+                margin: const EdgeInsets.only(top: 4.0),
+                child: const Icon(
+                  Icons.add_circle_outline_rounded,
+                  size: 30.0,
+                ),
+              )),
           const BottomNavigationBarItem(
-            label: "Suscripciones",
-            icon: Icon(
-              Icons.subscriptions_rounded,
-            ),
-          ),
+              label: "Suscripciones",
+              icon: Icon(
+                Icons.subscriptions_rounded,
+              )),
           const BottomNavigationBarItem(
-            label: "Biblioteca",
-            icon: Icon(
-              Icons.video_collection_rounded,
-            ),
-          ),
+              label: "Biblioteca",
+              icon: Icon(
+                Icons.video_collection_rounded,
+              )),
         ],
       ),
     );

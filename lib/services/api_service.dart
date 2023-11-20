@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_youtube_app/models/video_model.dart';
+import 'package:flutter_youtube_app/utils/constants.dart';
 import 'package:http/http.dart' as http;
-
-import '../utils/constants.dart';
 
 class APIService {
   Future<List<VideoModel>> getVideos() async {
