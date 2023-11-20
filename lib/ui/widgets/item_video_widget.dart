@@ -57,7 +57,7 @@ class ItemVideoWidget extends StatelessWidget {
               ),
             ),
             title: Text(
-              "Lorem ipsum dolor sit amet",
+              videoModel.snippet.title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -66,7 +66,7 @@ class ItemVideoWidget extends StatelessWidget {
               ),
             ),
             subtitle: Text(
-              "alanxelmundo · 6.5 M de vistas · hace 2 años",
+              "${videoModel.snippet.channelTitle}· 6.5 M de vistas · hace 2 años",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
