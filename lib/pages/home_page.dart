@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube_app/models/video_model.dart';
 import 'package:flutter_youtube_app/services/api_service.dart';
 import 'package:flutter_youtube_app/ui/widgets/item_filter_widget.dart';
 import 'package:flutter_youtube_app/ui/widgets/item_video_widget.dart';
 
 import '../ui/general/colors.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final APIService _apiService = APIService();
+  List<VideoModel> videos = [];
+
+  @override
+  initState() {
+    super.initState();
+    getData();
+  }
+
+  getData() {
+    _apiService.getVideos().then((value) {
+      videos = value;
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +87,15 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: videos.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ItemVideoWidget(
+                    videoModel: videos[index],
+                  );
+                })
           ],
         ),
       ),
